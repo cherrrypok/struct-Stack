@@ -13,9 +13,7 @@ void StackCtor(struct Stack* stk, int capacity)
 		return;
 	}
 
-    printf("%p\n", stk->data);
     *((canary*) (stk->data))                     = CANARY;
-    printf("%p\n", stk->data);
     *((canary*) (stk->data + stk->capacity + 1)) = CANARY;
     printf("%p\n", stk->data);
     stk->data = ++(stk->data);
